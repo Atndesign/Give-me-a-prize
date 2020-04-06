@@ -3,19 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
     <title>Give me a prize</title>
   </head>
   <body>
     <div class="wrapper">
       <div class="wrapper__header">
-        <h1>Give me a prize</h1>
+        <h1>
+          <img
+            src="./img/logo.png"
+            srcset="./img/logo.svg"
+            alt="logo"
+            width="387"
+            height="64"
+          />
+        </h1>
       </div>
-      <input type="text" class="wrapper__list-input" />
+      <textarea
+        cols="40"
+        rows="5"
+        type="text"
+        class="wrapper__list-input"
+      ></textarea>
       <button class="wrapper__submit">Pick a winner</button>
       <div class="winner__wrapper">
         <h2 class="winner-wrapper__title">Winner is</h2>
-        <div class="winner-wrapper__container"></div>
+        <div class="winner-wrapper__container">BVlahBlahBla</div>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
 </html>
