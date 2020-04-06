@@ -4,7 +4,6 @@ let inputDOM = document.getElementById("input");
 let inputBtnDOM = document.getElementById("input-btn");
 let resultDOM = document.getElementById("result");
 
-let time;
 let index;
 let spaces = 83;
 let loop;
@@ -13,7 +12,6 @@ function getPlayers() {
   document.querySelector(".players").style.bottom = -spaces + "px";
   document.querySelector(".players").style.transitionDuration = 0 + "s";
 
-  time = 0;
   loop = 0;
   index = 0;
   if (inputDOM.value === "") return;
@@ -29,7 +27,7 @@ function getPlayers() {
     setTimeout(() => {
       document.querySelector(".players").style.transitionDuration =
         playerList.length / 10 + "s";
-      displayPlayers(playerList);
+      displayWinner();
     }, 500);
   }
 }
@@ -40,17 +38,9 @@ function createPlayersElt(currentPlayer) {
   li.classList.add("player");
   document.querySelector(".players").appendChild(li);
 }
-
-function displayPlayers(players) {
-  if (index >= players.length) {
-    loop += 10;
-    index = 0;
-  }
-  setTimeout(() => {
-    document.querySelector(".players").style.bottom = spaces * random + "px";
-  }, 1000);
+function displayWinner() {
+  document.querySelector(".players").style.bottom = spaces * random + "px";
 }
-
 inputBtnDOM.addEventListener("click", () => {
   getPlayers();
 });
