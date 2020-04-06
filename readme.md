@@ -4,7 +4,7 @@
 
 Give me a prize, is a website made for picking a random subject / person
 
-## How to use it?:
+## How to use it?
 
 You'll need to enter your list into the text area separated by a semicolon and press the "Pick a winner" button and enjoy ! ^^
 
