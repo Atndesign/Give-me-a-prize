@@ -18,7 +18,7 @@ You'll need to enter your list into the text area separated by a semicolon and p
 
 ## Demo
 
-You can use pannelo here: [Give me a prize](https://atndesign.github.io/give-me-a-prize/) .
+You can use it here: [Give me a prize](https://atndesign.github.io/give-me-a-prize/) .
 
 ## Screenshots
 
