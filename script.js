@@ -6,7 +6,9 @@ let resultDOM = document.getElementById("result");
 
 let time;
 let index;
+
 function getPlayers() {
+  resultDOM.classList.remove("animated", "jackInTheBox");
   time = 100;
   index = 0;
   if (inputDOM.value === "") return;
@@ -26,6 +28,7 @@ function displayPlayers(players) {
       index += 1;
     }, time);
   } else {
+    resultDOM.classList.add("animated", "jackInTheBox");
     resultDOM.innerHTML = players[Math.floor(Math.random() * players.length)];
   }
 }
