@@ -9,6 +9,7 @@ let spaces = 83;
 let loop;
 let random;
 function getPlayers() {
+  document.querySelector(".players").innerHTML = "";
   document.querySelector(".players").style.bottom = -spaces + "px";
   document.querySelector(".players").style.transitionDuration = 0 + "s";
 
