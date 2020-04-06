@@ -33,8 +33,6 @@ function displayPlayers(players) {
   }
 }
 
-function getWinner() {}
-
 inputBtnDOM.addEventListener("click", () => {
   getPlayers();
 });
