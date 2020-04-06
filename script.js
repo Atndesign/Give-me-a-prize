@@ -6,31 +6,49 @@ let resultDOM = document.getElementById("result");
 
 let time;
 let index;
-
+let spaces = 83;
+let loop;
+let random;
 function getPlayers() {
-  resultDOM.classList.remove("animated", "jackInTheBox");
-  time = 100;
+  document.querySelector(".players").style.bottom = -spaces + "px";
+  document.querySelector(".players").style.transitionDuration = 0 + "s";
+
+  time = 0;
+  loop = 0;
   index = 0;
   if (inputDOM.value === "") return;
   else {
     let playerList = inputDOM.value.split(",");
-    displayPlayers(playerList);
+    for (let i = 0; i < 3; i++)
+      playerList.forEach((player) => {
+        createPlayersElt(player);
+      });
+    random = Math.floor(
+      Math.random() * playerList.length + playerList.length * 2
+    );
+    setTimeout(() => {
+      document.querySelector(".players").style.transitionDuration =
+        playerList.length / 10 + "s";
+      displayPlayers(playerList);
+    }, 500);
   }
 }
 
+function createPlayersElt(currentPlayer) {
+  let li = document.createElement("li");
+  li.textContent = currentPlayer;
+  li.classList.add("player");
+  document.querySelector(".players").appendChild(li);
+}
+
 function displayPlayers(players) {
-  if (index >= players.length) index = 0;
-  if (time !== 0) {
-    resultDOM.innerHTML = players[index];
-    let timeout = setTimeout(() => {
-      displayPlayers(players);
-      time -= 1;
-      index += 1;
-    }, time);
-  } else {
-    resultDOM.classList.add("animated", "jackInTheBox");
-    resultDOM.innerHTML = players[Math.floor(Math.random() * players.length)];
+  if (index >= players.length) {
+    loop += 10;
+    index = 0;
   }
+  setTimeout(() => {
+    document.querySelector(".players").style.bottom = spaces * random + "px";
+  }, 1000);
 }
 
 inputBtnDOM.addEventListener("click", () => {

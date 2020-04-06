@@ -57,4 +57,20 @@ body {
     background: #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     font-size: 36px;
+    height: 43px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.players {
+    position: relative;
+    left: 0;
+    bottom: 160px;
+    transition: bottom 8s cubic-bezier(0, 0.59, 0.99, 1.01);
+    text-align: center;
+    list-style: none;
+}
+
+.player {
+    margin-bottom: 40px;
 }
